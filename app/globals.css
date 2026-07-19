@@ -1,26 +1,83 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/* Makes `dark:` utilities respond to the .dark class next-themes toggles,
+   instead of the OS prefers-color-scheme (Tailwind v4's default). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors */
+  --color-background: #f7f8f5;
+  --color-foreground: #10241a;
+
+  --color-dl-dark: #0b2818;
+  --color-dl-darker: #071c10;
+  --color-dl-green: #2fae5c;
+  --color-dl-green-light: #5fd687;
+  --color-dl-orange: #f2790a;
+  --color-dl-orange-light: #ffa940;
+  --color-dl-ink: #10241a;
+  --color-dl-cream: #f7f8f5;
+
+  /* Typography */
+  --font-display: var(--font-space-grotesk), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-mono: var(--font-plex-mono), monospace;
+  --font-stencil: var(--font-saira-stencil), sans-serif;
+
+  /* Shadows */
+  --shadow-meter-glow: 0 0 24px rgb(242 121 10 / 35%);
+
+  /* Background Images */
+  --background-image-dl-gradient: linear-gradient(
+    135deg,
+    #0b2818 0%,
+    #123d22 60%,
+    #1a5230 100%
+  );
+
+  --background-image-dl-orange-gradient: linear-gradient(
+    135deg,
+    #f2790a 0%,
+    #ffa940 100%
+  );
+}
+
+/* Base theme variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-background);
+  --foreground: var(--color-foreground);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: var(--font-body);
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Optional: Better text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Calculator numbers */
+.meter-number {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,0 +1,64 @@
+'use client';
+
+import Image from 'next/image';
+import { motion } from 'motion/react';
+
+export default function AboutHero() {
+  return (
+    <section className="relative isolate h-[35vh] min-h-[320px] overflow-hidden py-16">
+      <motion.div
+        initial={{ scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 8, ease: 'easeOut' }}
+        className="absolute inset-0"
+      >
+        <Image
+          src="/about.png"
+          alt="Davelaw Technologies solar installation"
+          fill
+          priority
+          className="object-cover"
+        />
+      </motion.div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-dl-dark/95 via-dl-dark/80 to-dl-dark/70" />
+
+      {/* Orange Accent */}
+      <div className="absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-dl-orange/20 blur-[120px]" />
+
+      {/* Green Accent */}
+      <div className="absolute right-0 top-0 h-80 w-80 rounded-full bg-dl-green/15 blur-[140px]" />
+
+      {/* Content */}
+      <div className="relative z-10 flex h-full items-center">
+        <div className="mx-auto w-full max-w-7xl px-5 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl"
+          >
+            <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
+              Powering Homes,
+              <br />
+              Businesses &
+              <br />
+              Communities.
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 lg:text-lg">
+              Trusted renewable energy solutions built around quality, integrity
+              and innovation—helping homes and businesses enjoy reliable power
+              with genuine products, professional installation and long-term
+              support.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom Fade */}
+      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white dark:from-dl-dark to-transparent" />
+    </section>
+  );
+}
