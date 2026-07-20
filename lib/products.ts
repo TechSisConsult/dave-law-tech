@@ -131,7 +131,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-cctv-kit',
     slug: 'cctv-security-kit',
-    name: '[Confirm Brand] CCTV Security Kit',
+    name: 'CCTV Security Kit',
     description:
       'Complete CCTV surveillance solution for homes, offices and commercial properties.',
     brand: 'To Be Confirmed',
@@ -144,7 +144,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-mounting-kit',
     slug: 'solar-mounting-kit',
-    name: '[Confirm] Solar Mounting Kit',
+    name: 'Solar Mounting Kit',
     description:
       'Professional-grade aluminium mounting system for secure and durable solar panel installation.',
     brand: 'To Be Confirmed',
@@ -157,7 +157,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-mc4-kit',
     slug: 'mc4-connectors-dc-cables',
-    name: '[Confirm] MC4 Connectors & DC Cable Set',
+    name: 'MC4 Connectors & DC Cable Set',
     description:
       'High-quality solar connectors and DC cables engineered for safe and efficient installations.',
     brand: 'To Be Confirmed',
@@ -170,7 +170,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-complete-3-5kva',
     slug: 'complete-solar-system-3-5kva',
-    name: '[Confirm] Complete Solar System 3.5kVA',
+    name: 'Complete Solar Powered System 3.5kVA',
     description:
       'Professionally designed residential solar solution including inverter, batteries and solar panels.',
     brand: 'Davelaw Technologies',
@@ -183,7 +183,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-complete-5kva',
     slug: 'complete-solar-system-5kva',
-    name: '[Confirm] Complete Solar System 5kVA',
+    name: 'Complete Solar Powered System 5kVA',
     description:
       'Complete solar package tailored for medium-sized homes requiring reliable all-day power.',
     brand: 'Davelaw Technologies',
