@@ -142,7 +142,7 @@ export default function CTASection() {
             {/* Email */}
 
             <a
-              href="mailto:hello@davelawtech.com"
+              href="mailto:hello@davelawtechnologies.com"
               className="group rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur transition duration-300 hover:-translate-y-2 hover:border-dl-orange/40 hover:bg-white/10"
             >
               <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10">
@@ -154,7 +154,7 @@ export default function CTASection() {
               </h4>
 
               <p className="mt-2 text-sm text-white/60">
-                hello@davelawtech.com
+                hello@davelawtechnologies.com
               </p>
             </a>
           </div>

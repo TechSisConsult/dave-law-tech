@@ -6,7 +6,7 @@ import { HiOutlineSparkles } from 'react-icons/hi2';
 
 export default function FounderStory() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 dark:bg-dl-dark">
+    <section className="relative overflow-hidden bg-white py-16 dark:bg-dl-dark">
       {/* Background Glow */}
       <div className="absolute left-0 top-32 h-72 w-72 rounded-full bg-dl-green/10 blur-[120px]" />
       <div className="absolute right-0 bottom-20 h-80 w-80 rounded-full bg-dl-orange/10 blur-[140px]" />

@@ -1,17 +1,20 @@
-"use client";
+'use client';
 
-import { useMemo, useState } from "react";
-import { motion } from "motion/react";
-import { PRODUCTS, PRODUCT_CATEGORIES, ProductCategory } from "@/lib/products";
-import CategoryFilter from "@/components/products/CategoryFilter";
-import ProductCard from "@/components/products/ProductCard";
+import { useMemo, useState } from 'react';
+import { motion } from 'motion/react';
+import { PRODUCTS, PRODUCT_CATEGORIES, ProductCategory } from '@/lib/products';
+import CategoryFilter from '@/components/products/CategoryFilter';
+import ProductCard from '@/components/products/ProductCard';
 
 export default function ProductsPage() {
-  const [active, setActive] = useState<ProductCategory | "All">("All");
+  const [active, setActive] = useState<ProductCategory | 'All'>('All');
 
   const filtered = useMemo(
-    () => (active === "All" ? PRODUCTS : PRODUCTS.filter((p) => p.category === active)),
-    [active]
+    () =>
+      active === 'All'
+        ? PRODUCTS
+        : PRODUCTS.filter((p) => p.category === active),
+    [active],
   );
 
   return (
@@ -22,13 +25,18 @@ export default function ProductsPage() {
             Shop Solar Products
           </span>
           <h1 className="font-display text-3xl lg:text-4xl font-semibold mt-3 max-w-xl">
-            Genuine inverters, batteries &amp; solar panels — supplied and installed by Davelaw.
+            Genuine inverters, batteries &amp; solar panels - supplied and
+            installed by Davelaw.
           </h1>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 lg:px-8 py-10">
-        <CategoryFilter categories={PRODUCT_CATEGORIES} active={active} onChange={setActive} />
+        <CategoryFilter
+          categories={PRODUCT_CATEGORIES}
+          active={active}
+          onChange={setActive}
+        />
 
         <motion.div
           layout

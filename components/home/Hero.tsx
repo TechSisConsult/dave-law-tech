@@ -48,7 +48,7 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-white dark:bg-dl-darker">
+    <section className="relative isolate overflow-hidden bg-white dark:bg-dl-darker/60">
       <Image
         src="/hero-solar.jpg"
         fill

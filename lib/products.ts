@@ -1,131 +1,204 @@
-// Product catalog data for Davelaw Technologies.
-//
-// STATUS: Only "NRGT Tubular Battery 150AH/12V" is confirmed from Davelaw's
-// existing (indexed) site. Every other entry is a realistic placeholder —
-// clearly marked — sized to Davelaw's known categories (energy, power
-// equipment, inverter systems, solar panels). Replace `verified: false`
-// items with real names, specs and prices once the client confirms them.
-// No prices are invented with false precision — placeholders use
-// "Contact for price" until real pricing is supplied, matching common
-// practice for solar equipment where prices shift with FX rates.
+// Product catalog for Davelaw Technologies.
+// Replace placeholder names, descriptions and images with the actual
+// client inventory before production.
 
 export type ProductCategory =
-  | "Hybrid Inverters"
-  | "Batteries"
-  | "Solar Panels"
-  | "Portable Power Stations"
-  | "Accessories"
-  | "Complete Solar Systems";
+  | 'Hybrid Inverters'
+  | 'Batteries'
+  | 'Solar Panels'
+  | 'CCTV & Security'
+  | 'Accessories'
+  | 'Complete Solar Systems';
 
 export interface Product {
   id: string;
+  slug: string;
   name: string;
+  description: string;
+  brand?: string;
   category: ProductCategory;
-  specs: string[]; // short spec chips, e.g. "5.12kWh", "48V", "LiFePO4"
-  price?: string; // formatted string if known, otherwise omitted → "Contact for price"
-  verified: boolean; // true only for items confirmed against a real Davelaw source
+  image: string;
+  specs: string[];
+  price?: string;
+  verified: boolean;
 }
 
 export const PRODUCTS: Product[] = [
   {
-    id: "nrgt-tubular-150ah",
-    name: "NRGT Tubular Battery 150AH/12V",
-    category: "Batteries",
-    specs: ["150AH", "12V", "Tubular"],
+    id: 'nrgt-tubular-150ah',
+    slug: 'nrgt-tubular-battery-150ah-12v',
+    name: 'NRGT Tubular Battery 150AH/12V',
+    description:
+      'Heavy-duty tubular battery designed for dependable backup power and long service life.',
+    brand: 'NRGT',
+    category: 'Batteries',
+    image: '/nrgt-150ah.png',
+    specs: ['150AH', '12V', 'Tubular'],
     verified: true,
   },
-  // --- Placeholder items below — confirm with client before launch ---
+
   {
-    id: "placeholder-tubular-200ah",
-    name: "[Confirm name] Tubular Battery 200AH/12V",
-    category: "Batteries",
-    specs: ["200AH", "12V", "Tubular"],
+    id: 'placeholder-tubular-200ah',
+    slug: 'tubular-battery-200ah',
+    name: '[Confirm Brand] Tubular Battery 200AH/12V',
+    description:
+      'High-capacity tubular battery suitable for larger residential and commercial backup systems.',
+    brand: 'To Be Confirmed',
+    category: 'Batteries',
+    image: '/nrgt-200ah.png',
+    specs: ['200AH', '12V', 'Tubular'],
     verified: false,
   },
+
   {
-    id: "placeholder-lithium-5kwh",
-    name: "[Confirm name] Lithium Battery 5.12kWh",
-    category: "Batteries",
-    specs: ["5.12kWh", "48V", "LiFePO4"],
+    id: 'placeholder-lithium-5kwh',
+    slug: 'lithium-battery-5-12kwh',
+    name: '[Confirm Brand] Lithium Battery 5.12kWh',
+    description:
+      'Long-lasting lithium battery designed for efficient solar energy storage and dependable backup power.',
+    brand: 'To Be Confirmed',
+    category: 'Batteries',
+    image: '/lithium.png',
+    specs: ['5.12kWh', '48V', 'LiFePO₄'],
     verified: false,
   },
+
   {
-    id: "placeholder-inverter-3-5kva",
-    name: "[Confirm name] Hybrid Inverter 3.5kVA",
-    category: "Hybrid Inverters",
-    specs: ["3.5kVA", "24V", "Pure Sine Wave"],
+    id: 'placeholder-inverter-3-5kva',
+    slug: 'hybrid-inverter-3-5kva',
+    name: '[Confirm Brand] Hybrid Inverter 3.5kVA',
+    description:
+      'Compact hybrid inverter ideal for powering essential home appliances while maximizing solar energy usage.',
+    brand: 'Deye',
+    category: 'Hybrid Inverters',
+    image: '/inverter.png',
+    specs: ['3.5kVA', '24V', 'Pure Sine Wave'],
     verified: false,
   },
+
   {
-    id: "placeholder-inverter-5kva",
-    name: "[Confirm name] Hybrid Inverter 5kVA",
-    category: "Hybrid Inverters",
-    specs: ["5kVA", "48V", "Pure Sine Wave"],
+    id: 'placeholder-inverter-5kva',
+    slug: 'hybrid-inverter-5kva',
+    name: 'Deye Hybrid Inverter 5kVA',
+    description:
+      'Reliable hybrid inverter engineered for homes and businesses requiring stable, uninterrupted power.',
+    brand: 'Deye',
+    category: 'Hybrid Inverters',
+    image: '/inverter-5.png',
+    specs: ['5kVA', '48V', 'Pure Sine Wave'],
     verified: false,
   },
+
   {
-    id: "placeholder-inverter-10kva",
-    name: "[Confirm name] Hybrid Inverter 10kVA",
-    category: "Hybrid Inverters",
-    specs: ["10kVA", "48V", "3-Phase Option"],
+    id: 'placeholder-inverter-10kva',
+    slug: 'hybrid-inverter-10kva',
+    name: 'Deye Hybrid Inverter 10kVA',
+    description:
+      'Powerful hybrid inverter suitable for commercial facilities and large residential installations.',
+    brand: 'Deye',
+    category: 'Hybrid Inverters',
+    image: '/inverter-10.png',
+    specs: ['10kVA', '48V', '3-Phase'],
     verified: false,
   },
+
   {
-    id: "placeholder-panel-450w",
-    name: "[Confirm brand] Monocrystalline Panel 450W",
-    category: "Solar Panels",
-    specs: ["450W", "Monocrystalline"],
+    id: 'placeholder-panel-450w',
+    slug: 'monocrystalline-panel-450w',
+    name: 'Deye Monocrystalline Solar Panel 450W',
+    description:
+      'High-efficiency monocrystalline solar panel engineered for reliable power generation.',
+    brand: 'To Be Confirmed',
+    category: 'Solar Panels',
+    image: '/monocrystalline-panel.png',
+    specs: ['450W', 'Mono', 'High Efficiency'],
     verified: false,
   },
+
   {
-    id: "placeholder-panel-550w",
-    name: "[Confirm brand] Monocrystalline Panel 550W",
-    category: "Solar Panels",
-    specs: ["550W", "Monocrystalline"],
+    id: 'placeholder-panel-550w',
+    slug: 'monocrystalline-panel-550w',
+    name: 'Deye Monocrystalline Solar Panel 550W',
+    description:
+      'Premium high-output solar panel designed to maximize energy production with fewer panels.',
+    brand: 'To Be Confirmed',
+    category: 'Solar Panels',
+    image: '/monocrystalline-panel-550.png',
+    specs: ['550W', 'Mono', 'High Efficiency'],
     verified: false,
   },
+
   {
-    id: "placeholder-power-station",
-    name: "[Confirm name] Portable Power Station 1000W",
-    category: "Portable Power Stations",
-    specs: ["1000W", "Rechargeable"],
+    id: 'placeholder-cctv-kit',
+    slug: 'cctv-security-kit',
+    name: '[Confirm Brand] CCTV Security Kit',
+    description:
+      'Complete CCTV surveillance solution for homes, offices and commercial properties.',
+    brand: 'To Be Confirmed',
+    category: 'CCTV & Security',
+    image: '/cctv-kit.png',
+    specs: ['HD Cameras', 'Night Vision', 'Remote Monitoring'],
     verified: false,
   },
+
   {
-    id: "placeholder-cables",
-    name: "[Confirm] MC4 Connectors & DC Cable Set",
-    category: "Accessories",
-    specs: ["MC4", "Solar-rated"],
+    id: 'placeholder-mounting-kit',
+    slug: 'solar-mounting-kit',
+    name: '[Confirm] Solar Mounting Kit',
+    description:
+      'Professional-grade aluminium mounting system for secure and durable solar panel installation.',
+    brand: 'To Be Confirmed',
+    category: 'Accessories',
+    image: '/mounting-kit.png',
+    specs: ['Aluminium', 'Roof Mount', 'Corrosion Resistant'],
     verified: false,
   },
+
   {
-    id: "placeholder-mounting",
-    name: "[Confirm] Roof Mounting & Racking Kit",
-    category: "Accessories",
-    specs: ["Aluminium", "Roof-mount"],
+    id: 'placeholder-mc4-kit',
+    slug: 'mc4-connectors-dc-cables',
+    name: '[Confirm] MC4 Connectors & DC Cable Set',
+    description:
+      'High-quality solar connectors and DC cables engineered for safe and efficient installations.',
+    brand: 'To Be Confirmed',
+    category: 'Accessories',
+    image: '/mc4-kit.png',
+    specs: ['MC4', 'Solar Rated', 'UV Resistant'],
     verified: false,
   },
+
   {
-    id: "placeholder-complete-3_5kva",
-    name: "[Confirm] Complete Home Solar Package — 3.5kVA",
-    category: "Complete Solar Systems",
-    specs: ["3.5kVA", "5kWh", "Panels included"],
+    id: 'placeholder-complete-3-5kva',
+    slug: 'complete-solar-system-3-5kva',
+    name: '[Confirm] Complete Solar System 3.5kVA',
+    description:
+      'Professionally designed residential solar solution including inverter, batteries and solar panels.',
+    brand: 'Davelaw Technologies',
+    category: 'Complete Solar Systems',
+    image: '/solar-systems-5kwh.png',
+    specs: ['3.5kVA', '5kWh', 'Panels Included'],
     verified: false,
   },
+
   {
-    id: "placeholder-complete-5kva",
-    name: "[Confirm] Complete Home Solar Package — 5kVA",
-    category: "Complete Solar Systems",
-    specs: ["5kVA", "10kWh", "Panels included"],
+    id: 'placeholder-complete-5kva',
+    slug: 'complete-solar-system-5kva',
+    name: '[Confirm] Complete Solar System 5kVA',
+    description:
+      'Complete solar package tailored for medium-sized homes requiring reliable all-day power.',
+    brand: 'Davelaw Technologies',
+    category: 'Complete Solar Systems',
+    image: '/solar-systems-10kwh.png',
+    specs: ['5kVA', '10kWh', 'Panels Included'],
     verified: false,
   },
 ];
 
 export const PRODUCT_CATEGORIES: ProductCategory[] = [
-  "Hybrid Inverters",
-  "Batteries",
-  "Solar Panels",
-  "Portable Power Stations",
-  "Accessories",
-  "Complete Solar Systems",
+  'Hybrid Inverters',
+  'Batteries',
+  'Solar Panels',
+  'CCTV & Security',
+  'Accessories',
+  'Complete Solar Systems',
 ];

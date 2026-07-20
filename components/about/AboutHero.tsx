@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export default function AboutHero() {
   return (
-    <section className="relative isolate h-[35vh] min-h-[320px] overflow-hidden py-16">
+    <section className="relative isolate h-[55vh] min-h-[320px] overflow-hidden pt-20">
       <motion.div
         initial={{ scale: 1.08 }}
         animate={{ scale: 1 }}
@@ -22,7 +22,7 @@ export default function AboutHero() {
       </motion.div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-dl-dark/95 via-dl-dark/80 to-dl-dark/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-dl-dark/65 via-dl-dark/60 to-dl-dark/70" />
 
       {/* Orange Accent */}
       <div className="absolute -left-24 top-1/2 h-72 w-72 -translate-y-1/2 rounded-full bg-dl-orange/20 blur-[120px]" />
@@ -39,15 +39,13 @@ export default function AboutHero() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <h1 className="mt-6 font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-              Powering Homes,
-              <br />
-              Businesses &
+            <h1 className="mt-6 font-display text-2xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+              Powering Homes,Businesses &
               <br />
               Communities.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 lg:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 dark:text-white/75 text-dl-dark lg:text-lg">
               Trusted renewable energy solutions built around quality, integrity
               and innovation—helping homes and businesses enjoy reliable power
               with genuine products, professional installation and long-term

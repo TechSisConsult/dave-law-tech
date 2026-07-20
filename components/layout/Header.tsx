@@ -71,7 +71,7 @@ export default function Header() {
               'rounded-full transition-all duration-500',
               'border',
               'backdrop-blur-xl',
-              'px-5',
+              'px-4',
               'h-20',
               'flex items-center justify-between',
 
@@ -91,7 +91,7 @@ export default function Header() {
               />
 
               <div className="flex flex-col leading-none">
-                <span className="font-display text-lg font-bold tracking-tight">
+                <span className="font-display text-md font-bold tracking-tight">
                   <span className="text-dl-green">DAVE</span>
 
                   <span className="text-dl-orange">LAW</span>
@@ -102,13 +102,13 @@ export default function Header() {
                 </span>
               </div>
             </Link>
-            <nav className="hidden lg:flex items-center gap-10">
+            <nav className="hidden lg:flex items-center xl:gap-8 lg:gap-5">
               {NAV_LINKS.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={clsx(
-                    'group relative text-[15px] font-medium transition',
+                    'group relative xl:text-[14px] lg:text-[11px] font-medium transition',
 
                     pathname === item.href
                       ? 'text-dl-green'
@@ -117,19 +117,7 @@ export default function Header() {
                 >
                   {item.label}
 
-                  <span
-                    className="
-        absolute
-        left-0
-        -bottom-2
-        h-[2px]
-        w-0
-        bg-dl-orange
-        transition-all
-        duration-300
-        group-hover:w-full
-      "
-                  />
+                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-dl-orange transition-all duration-300 group-hover:w-full      " />
                 </Link>
               ))}
             </nav>
@@ -143,22 +131,7 @@ export default function Header() {
                 <HiOutlineClipboardDocumentList className="text-xl dark:text-white/50" />
 
                 {items.length > 0 && (
-                  <span
-                    className="
-        absolute
-        -right-1
-        -top-1
-        flex
-        h-5
-        w-5
-        items-center
-        justify-center
-        rounded-full
-        bg-dl-orange
-        text-[10px]
-        font-bold
-      "
-                  >
+                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-dl-orange text-[10px] font-bold">
                     {items.length}
                   </span>
                 )}
@@ -166,16 +139,11 @@ export default function Header() {
 
               <Link
                 href="/solar-estimator"
-                className="group hidden lg:flex items-center gap-3 rounded-full bg-gradient-to-r from-dl-orange to-dl-orange-light px-7 py-3.5 font-semibold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl transition:color .3s,transform .3s;"
+                className="group hidden lg:flex items-center gap-3 rounded-full bg-gradient-to-r from-dl-orange to-dl-orange-light xl:px-5 lg:px-4 py-3.5 font-semibold text-white text-[12px] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl transition:color .3s,transform .3s;"
               >
                 Get Free Estimate
                 <svg
-                  className="
-h-4
-w-4
-transition-transform
-group-hover:translate-x-1
-"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
@@ -209,15 +177,7 @@ group-hover:translate-x-1
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
               transition={{ duration: 0.35 }}
-              className="
-      fixed
-      inset-0
-      z-[998]
-      bg-white/90
-      dark:bg-dl-dark/95
-      backdrop-blur-3xl
-      lg:hidden
-      "
+              className="fixed inset-0 z-[998] bg-white/90 dark:bg-dl-dark/95 backdrop-blur-3xl lg:hidden"
             >
               <div className="flex h-full flex-col">
                 {/* Top Bar */}
@@ -245,16 +205,7 @@ group-hover:translate-x-1
 
                   <button
                     onClick={() => setMenuOpen(false)}
-                    className="
-            flex
-            h-12
-            w-12
-            items-center
-            justify-center
-            rounded-full
-            bg-dl-orange
-            text-white
-            "
+                    className="flex h-12 w-12 items-center justify-center rounded-full bg-dl-orange text-white"
                   >
                     <HiXMark size={28} />
                   </button>
@@ -281,31 +232,11 @@ group-hover:translate-x-1
                       <Link
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className="
-                group
-                flex
-                items-center
-                py-3
-                text-xl
-                font-display
-                font-semibold
-                text-dl-ink
-                dark:text-white
-                "
+                        className="group flex items-center py-3 text-xl font-display font-semibold text-dl-ink dark:text-white"
                       >
                         {item.label}
 
-                        <span
-                          className="
-                ml-4
-                h-[2px]
-                w-0
-                bg-dl-orange
-                transition-all
-                duration-300
-                group-hover:w-12
-                "
-                        />
+                        <span className="ml-4 h-[2px] w-0 bg-dl-orange transition-all duration-300 group-hover:w-12" />
                       </Link>
                     </motion.div>
                   ))}
@@ -317,18 +248,7 @@ group-hover:translate-x-1
                   <Link
                     href="/solar-estimator"
                     onClick={() => setMenuOpen(false)}
-                    className="
-            flex
-            items-center
-            justify-center
-            rounded-full
-            bg-dl-orange
-            py-4
-            text-lg
-            font-semibold
-            text-white
-            shadow-xl
-            "
+                    className="flex items-center justify-center rounded-full bg-dl-orange py-4 text-lg font-semibold text-white shadow-xl"
                   >
                     Get Free Estimate
                   </Link>

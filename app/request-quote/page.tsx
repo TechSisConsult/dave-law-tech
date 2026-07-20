@@ -1,49 +1,60 @@
-"use client";
+'use client';
 
-import { useMemo, useState } from "react";
-import Link from "next/link";
-import { AnimatePresence, motion } from "motion/react";
-import { HiOutlineTrash, HiOutlineArrowLeft, HiOutlineArrowRight, HiOutlineChatAlt2, HiOutlineMail } from "react-icons/hi";
-import { useQuoteList } from "@/context/QuoteListContext";
+import { useMemo, useState } from 'react';
+import Link from 'next/link';
+import { AnimatePresence, motion } from 'motion/react';
+import {
+  HiOutlineTrash,
+  HiOutlineArrowLeft,
+  HiOutlineArrowRight,
+  HiOutlineChatAlt2,
+  HiOutlineMail,
+} from 'react-icons/hi';
+import { useQuoteList } from '@/context/QuoteListContext';
 
 // Davelaw's confirmed WhatsApp business number.
-const WHATSAPP_NUMBER = "2348033699776";
+const WHATSAPP_NUMBER = '2348033699776';
 
-const STEPS = ["Review Products", "Your Details", "Send Request"];
+const STEPS = ['Review Products', 'Your Details', 'Send Request'];
 
 export default function RequestQuotePage() {
   const { items, removeItem } = useQuoteList();
   const [step, setStep] = useState(0);
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [location, setLocation] = useState("");
-  const [notes, setNotes] = useState("");
-  const [sendMethod, setSendMethod] = useState<"whatsapp" | "email" | null>(null);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [location, setLocation] = useState('');
+  const [notes, setNotes] = useState('');
+  const [sendMethod, setSendMethod] = useState<'whatsapp' | 'email' | null>(
+    null,
+  );
 
-  const canProceedFromDetails = name.trim().length > 1 && phone.trim().length > 6;
+  const canProceedFromDetails =
+    name.trim().length > 1 && phone.trim().length > 6;
 
   const messageBody = useMemo(() => {
-    const productLines = items.map((p) => `• ${p.name} (${p.specs.join(", ")})`).join("\n");
+    const productLines = items
+      .map((p) => `• ${p.name} (${p.specs.join(', ')})`)
+      .join('\n');
     return [
-      `Quote request from ${name || "[name]"}`,
-      `Phone: ${phone || "[phone]"}`,
-      `Location: ${location || "[location]"}`,
-      "",
-      "Products:",
-      productLines || "(none selected)",
-      "",
-      notes ? `Notes: ${notes}` : "",
+      `Quote request from ${name || '[name]'}`,
+      `Phone: ${phone || '[phone]'}`,
+      `Location: ${location || '[location]'}`,
+      '',
+      'Products:',
+      productLines || '(none selected)',
+      '',
+      notes ? `Notes: ${notes}` : '',
     ]
       .filter(Boolean)
-      .join("\n");
+      .join('\n');
   }, [items, name, phone, location, notes]);
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageBody)}`;
   // Email uses a mailto: link for now — no backend dependency required.
   // Upgrade path: replace with a Resend-powered API route (as on the main
   // TechSis site) once Davelaw confirms a business email + Resend API key.
-  const emailHref = `mailto:hello@davelawtech.com?subject=${encodeURIComponent(
-    "Quote Request — Davelaw Technologies"
+  const emailHref = `mailto:hello@davelawtechnologies.com?subject=${encodeURIComponent(
+    'Quote Request — Davelaw Technologies',
   )}&body=${encodeURIComponent(messageBody)}`;
 
   return (
@@ -62,15 +73,21 @@ export default function RequestQuotePage() {
               <div key={label} className="flex items-center gap-2 sm:gap-4">
                 <div
                   className={`h-8 w-8 rounded-full flex items-center justify-center text-sm font-semibold ${
-                    i <= step ? "bg-dl-orange text-dl-dark" : "bg-white/10 text-white/40"
+                    i <= step
+                      ? 'bg-dl-orange text-dl-dark'
+                      : 'bg-white/10 text-white/40'
                   }`}
                 >
                   {i + 1}
                 </div>
-                <span className={`hidden sm:inline text-sm font-medium ${i <= step ? "text-white" : "text-white/40"}`}>
+                <span
+                  className={`hidden sm:inline text-sm font-medium ${i <= step ? 'text-white' : 'text-white/40'}`}
+                >
                   {label}
                 </span>
-                {i < STEPS.length - 1 && <div className="w-6 h-px bg-white/20" />}
+                {i < STEPS.length - 1 && (
+                  <div className="w-6 h-px bg-white/20" />
+                )}
               </div>
             ))}
           </div>
@@ -80,11 +97,17 @@ export default function RequestQuotePage() {
       <section className="mx-auto max-w-4xl px-5 lg:px-8 py-12">
         <AnimatePresence mode="wait">
           {step === 0 && (
-            <motion.div key="s0" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
+            <motion.div
+              key="s0"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+            >
               {items.length === 0 ? (
                 <div className="text-center py-16">
                   <p className="text-dl-ink/50 dark:text-white/50">
-                    Your Quote List is empty. Browse products and add some first.
+                    Your Quote List is empty. Browse products and add some
+                    first.
                   </p>
                   <Link
                     href="/products"
@@ -101,16 +124,25 @@ export default function RequestQuotePage() {
                       className="flex items-start justify-between gap-3 rounded-xl border border-dl-dark/10 dark:border-white/10 bg-white dark:bg-dl-dark p-4"
                     >
                       <div>
-                        <p className="font-medium text-dl-ink dark:text-white">{item.name}</p>
+                        <p className="font-medium text-dl-ink dark:text-white">
+                          {item.name}
+                        </p>
                         <div className="flex flex-wrap gap-1.5 mt-1.5">
                           {item.specs.map((s) => (
-                            <span key={s} className="text-[11px] px-2 py-0.5 rounded-full bg-dl-dark/5 dark:bg-white/10 text-dl-ink/60 dark:text-white/60">
+                            <span
+                              key={s}
+                              className="text-[11px] px-2 py-0.5 rounded-full bg-dl-dark/5 dark:bg-white/10 text-dl-ink/60 dark:text-white/60"
+                            >
                               {s}
                             </span>
                           ))}
                         </div>
                       </div>
-                      <button onClick={() => removeItem(item.id)} className="text-dl-ink/30 hover:text-red-500 shrink-0" aria-label={`Remove ${item.name}`}>
+                      <button
+                        onClick={() => removeItem(item.id)}
+                        className="text-dl-ink/30 hover:text-red-500 shrink-0"
+                        aria-label={`Remove ${item.name}`}
+                      >
                         <HiOutlineTrash />
                       </button>
                     </div>
@@ -121,9 +153,17 @@ export default function RequestQuotePage() {
           )}
 
           {step === 1 && (
-            <motion.div key="s1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-5">
+            <motion.div
+              key="s1"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="space-y-5"
+            >
               <div>
-                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">Full Name</label>
+                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">
+                  Full Name
+                </label>
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -132,7 +172,9 @@ export default function RequestQuotePage() {
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">Phone Number</label>
+                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">
+                  Phone Number
+                </label>
                 <input
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -141,7 +183,9 @@ export default function RequestQuotePage() {
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">Location</label>
+                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">
+                  Location
+                </label>
                 <input
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
@@ -150,7 +194,9 @@ export default function RequestQuotePage() {
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">Additional Notes (optional)</label>
+                <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">
+                  Additional Notes (optional)
+                </label>
                 <textarea
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
@@ -163,18 +209,28 @@ export default function RequestQuotePage() {
           )}
 
           {step === 2 && (
-            <motion.div key="s2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
-              <p className="text-sm text-dl-ink/50 dark:text-white/50 mb-2">Choose how to send</p>
+            <motion.div
+              key="s2"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              className="space-y-4"
+            >
+              <p className="text-sm text-dl-ink/50 dark:text-white/50 mb-2">
+                Choose how to send
+              </p>
               <div className="grid sm:grid-cols-2 gap-4">
                 <a
                   href={whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setSendMethod("whatsapp")}
+                  onClick={() => setSendMethod('whatsapp')}
                   className="rounded-2xl border-2 border-dl-green bg-dl-green/5 p-6 text-center hover:bg-dl-green/10 transition"
                 >
                   <HiOutlineChatAlt2 className="text-3xl text-dl-green mx-auto" />
-                  <p className="font-display font-semibold text-dl-dark dark:text-white mt-3">Send via WhatsApp</p>
+                  <p className="font-display font-semibold text-dl-dark dark:text-white mt-3">
+                    Send via WhatsApp
+                  </p>
                   <p className="text-xs text-dl-ink/50 dark:text-white/50 mt-1">
                     Opens WhatsApp with your quote pre-filled. Fastest response.
                   </p>
@@ -185,19 +241,25 @@ export default function RequestQuotePage() {
 
                 <a
                   href={emailHref}
-                  onClick={() => setSendMethod("email")}
+                  onClick={() => setSendMethod('email')}
                   className="rounded-2xl border border-dl-dark/15 dark:border-white/15 p-6 text-center hover:border-dl-dark/30 transition"
                 >
                   <HiOutlineMail className="text-3xl text-dl-ink/60 dark:text-white/60 mx-auto" />
-                  <p className="font-display font-semibold text-dl-dark dark:text-white mt-3">Send via Email</p>
+                  <p className="font-display font-semibold text-dl-dark dark:text-white mt-3">
+                    Send via Email
+                  </p>
                   <p className="text-xs text-dl-ink/50 dark:text-white/50 mt-1">
-                    Opens your email app with the quote pre-filled, addressed to our team.
+                    Opens your email app with the quote pre-filled, addressed to
+                    our team.
                   </p>
                 </a>
               </div>
               {sendMethod && (
                 <p className="text-center text-sm text-dl-green mt-4">
-                  {sendMethod === "whatsapp" ? "WhatsApp should have opened in a new tab." : "Your email app should have opened."} If nothing happened, check your pop-up blocker.
+                  {sendMethod === 'whatsapp'
+                    ? 'WhatsApp should have opened in a new tab.'
+                    : 'Your email app should have opened.'}{' '}
+                  If nothing happened, check your pop-up blocker.
                 </p>
               )}
             </motion.div>
@@ -215,7 +277,10 @@ export default function RequestQuotePage() {
             </button>
             <button
               onClick={() => setStep((s) => Math.min(2, s + 1))}
-              disabled={(step === 0 && items.length === 0) || (step === 1 && !canProceedFromDetails)}
+              disabled={
+                (step === 0 && items.length === 0) ||
+                (step === 1 && !canProceedFromDetails)
+              }
               className="inline-flex items-center gap-2 rounded-full bg-dl-orange-gradient px-7 py-3 font-semibold text-dl-dark shadow-meter-glow hover:brightness-105 transition disabled:opacity-40 disabled:pointer-events-none"
             >
               Continue <HiOutlineArrowRight />

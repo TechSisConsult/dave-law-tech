@@ -1,43 +1,56 @@
-"use client";
+'use client';
 
-import { useMemo, useState } from "react";
-import { motion } from "motion/react";
-import { HiOutlineLocationMarker, HiOutlinePhone, HiOutlineMail, HiOutlineChatAlt2 } from "react-icons/hi";
+import { useMemo, useState } from 'react';
+import { motion } from 'motion/react';
+import {
+  HiOutlineLocationMarker,
+  HiOutlinePhone,
+  HiOutlineMail,
+  HiOutlineChatAlt2,
+} from 'react-icons/hi';
 
-const WHATSAPP_NUMBER = "2348033699776";
+const WHATSAPP_NUMBER = '2348033699776';
 
 export default function ContactPage() {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
 
   const messageBody = useMemo(
     () =>
-      [`General inquiry from ${name || "[name]"}`, `Phone: ${phone || "[phone]"}`, "", message || "[message]"].join(
-        "\n"
-      ),
-    [name, phone, message]
+      [
+        `General inquiry from ${name || '[name]'}`,
+        `Phone: ${phone || '[phone]'}`,
+        '',
+        message || '[message]',
+      ].join('\n'),
+    [name, phone, message],
   );
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageBody)}`;
-  const emailHref = `mailto:hello@davelawtech.com?subject=${encodeURIComponent(
-    "General Inquiry — Davelaw Technologies"
+  const emailHref = `mailto:hello@davelawtechnologies.com?subject=${encodeURIComponent(
+    'General Inquiry — Davelaw Technologies',
   )}&body=${encodeURIComponent(messageBody)}`;
 
   return (
     <main className="bg-dl-cream dark:bg-dl-darker min-h-screen transition-colors">
       <section className="bg-dl-gradient text-white">
         <div className="mx-auto max-w-6xl px-5 lg:px-8 py-14">
-          <span className="text-xs font-semibold tracking-widest text-dl-orangeLight uppercase">Contact Us</span>
+          <span className="text-xs font-semibold tracking-widest text-dl-orangeLight uppercase">
+            Contact Us
+          </span>
           <h1 className="font-display text-3xl lg:text-4xl font-semibold mt-3 max-w-xl">
             Not sure what you need yet? Just talk to us.
           </h1>
           <p className="text-white/60 mt-3 max-w-lg">
-            Questions, site inspections, or general inquiries — this is the front door. For pricing on
-            specific products, use{" "}
-            <a href="/request-quote" className="underline hover:text-dl-orangeLight">
+            Questions, site inspections, or general inquiries — this is the
+            front door. For pricing on specific products, use{' '}
+            <a
+              href="/request-quote"
+              className="underline hover:text-dl-orangeLight"
+            >
               Request a Quote
-            </a>{" "}
+            </a>{' '}
             instead.
           </p>
         </div>
@@ -53,11 +66,16 @@ export default function ContactPage() {
             <div className="flex items-start gap-3">
               <HiOutlineLocationMarker className="text-dl-green text-xl mt-0.5 shrink-0" />
               <div>
-                <p className="font-semibold text-dl-dark dark:text-white">Office</p>
-                <p className="text-sm text-dl-ink/60 dark:text-white/60 mt-1">
-                  Suite 91, Stadium Shopping Complex, Ibrahim Taiwo Road, Ilorin West, Kwara State, Nigeria
+                <p className="font-semibold text-dl-dark dark:text-white">
+                  Office
                 </p>
-                <p className="text-xs text-dl-ink/30 dark:text-white/30 mt-1">[Confirm this is still current]</p>
+                <p className="text-sm text-dl-ink/60 dark:text-white/60 mt-1">
+                  Suite 91, Stadium Shopping Complex, Ibrahim Taiwo Road, Ilorin
+                  West, Kwara State, Nigeria
+                </p>
+                <p className="text-xs text-dl-ink/30 dark:text-white/30 mt-1">
+                  [Confirm this is still current]
+                </p>
               </div>
             </div>
           </div>
@@ -66,8 +84,12 @@ export default function ContactPage() {
             <div className="flex items-start gap-3">
               <HiOutlinePhone className="text-dl-green text-xl mt-0.5 shrink-0" />
               <div>
-                <p className="font-semibold text-dl-dark dark:text-white">Phone / WhatsApp</p>
-                <p className="text-sm text-dl-ink/60 dark:text-white/60 mt-1">+234 803 369 9776</p>
+                <p className="font-semibold text-dl-dark dark:text-white">
+                  Phone / WhatsApp
+                </p>
+                <p className="text-sm text-dl-ink/60 dark:text-white/60 mt-1">
+                  +234 803 369 9776
+                </p>
               </div>
             </div>
           </div>
@@ -76,9 +98,15 @@ export default function ContactPage() {
             <div className="flex items-start gap-3">
               <HiOutlineMail className="text-dl-green text-xl mt-0.5 shrink-0" />
               <div>
-                <p className="font-semibold text-dl-dark dark:text-white">Email</p>
-                <p className="text-sm text-dl-ink/60 dark:text-white/60 mt-1">hello@davelawtech.com</p>
-                <p className="text-xs text-dl-ink/30 dark:text-white/30 mt-1">[Confirm real business email]</p>
+                <p className="font-semibold text-dl-dark dark:text-white">
+                  Email
+                </p>
+                <p className="text-sm text-dl-ink/60 dark:text-white/60 mt-1">
+                  hello@davelawtechnologies.com
+                </p>
+                <p className="text-xs text-dl-ink/30 dark:text-white/30 mt-1">
+                  [Confirm real business email]
+                </p>
               </div>
             </div>
           </div>
@@ -99,10 +127,14 @@ export default function ContactPage() {
           transition={{ delay: 0.1 }}
           className="rounded-2xl border border-dl-dark/10 dark:border-white/10 bg-white dark:bg-dl-dark p-6 lg:p-8"
         >
-          <h2 className="font-display font-semibold text-lg text-dl-dark dark:text-white mb-5">Send a message</h2>
+          <h2 className="font-display font-semibold text-lg text-dl-dark dark:text-white mb-5">
+            Send a message
+          </h2>
           <div className="space-y-4">
             <div>
-              <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">Full Name</label>
+              <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">
+                Full Name
+              </label>
               <input
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -110,7 +142,9 @@ export default function ContactPage() {
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">Phone Number</label>
+              <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">
+                Phone Number
+              </label>
               <input
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -118,7 +152,9 @@ export default function ContactPage() {
               />
             </div>
             <div>
-              <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">Message</label>
+              <label className="text-sm font-medium text-dl-ink/70 dark:text-white/70">
+                Message
+              </label>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
