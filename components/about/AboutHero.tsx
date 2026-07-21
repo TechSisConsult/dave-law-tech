@@ -45,9 +45,9 @@ export default function AboutHero() {
               Communities.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 dark:text-white/75 text-dl-dark lg:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 lg:text-lg">
               Trusted renewable energy solutions built around quality, integrity
-              and innovation—helping homes and businesses enjoy reliable power
+              and innovation; helping homes and businesses enjoy reliable power
               with genuine products, professional installation and long-term
               support.
             </p>
@@ -56,7 +56,7 @@ export default function AboutHero() {
       </div>
 
       {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white dark:from-dl-dark to-transparent" />
+      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white/80 dark:from-dl-dark to-transparent" />
     </section>
   );
 }
