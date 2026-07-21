@@ -23,7 +23,7 @@ const NAV_LINKS = [
   { label: 'Solar Estimator', href: '/solar-estimator' },
   { label: 'Power Calculator', href: '/generator-calculator' },
   { label: 'Products', href: '/products' },
-  { label: 'Portfolio', href: '/portfolio' },
+  // { label: 'Portfolio', href: '/portfolio' },
   { label: 'Contact', href: '/contact' },
 ];
 

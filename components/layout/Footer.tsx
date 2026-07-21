@@ -4,7 +4,7 @@ import {
   HiOutlinePhone,
   HiOutlineLocationMarker,
 } from 'react-icons/hi';
-import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Footer() {
@@ -29,18 +29,25 @@ export default function Footer() {
           </p>
           <div className="flex gap-4 mt-5 text-lg">
             <a
-              href="#"
+              href="https://www.facebook.com/Davelawtechnologies/"
               aria-label="Facebook"
               className="hover:text-dl-green-light"
             >
               <FaFacebookF />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/davelawtechnologies/"
               aria-label="Instagram"
               className="hover:text-dl-green-light"
             >
               <FaInstagram />
+            </a>
+            <a
+              href="https://www.tiktok.com/@davelaw774"
+              aria-label="Instagram"
+              className="hover:text-dl-green-light"
+            >
+              <FaTiktok />
             </a>
             <a
               href="https://wa.me/2348033699776"
