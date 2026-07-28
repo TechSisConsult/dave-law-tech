@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-tubular-200ah',
     slug: 'tubular-battery-200ah',
-    name: '[Confirm Brand] Tubular Battery 200AH/12V',
+    name: 'Tubular Battery 200AH/12V',
     description:
       'High-capacity tubular battery suitable for larger residential and commercial backup systems.',
     brand: 'To Be Confirmed',
@@ -53,7 +53,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-lithium-5kwh',
     slug: 'lithium-battery-5-12kwh',
-    name: '[Confirm Brand] Lithium Battery 5.12kWh',
+    name: 'Lithium Battery 5.12kWh',
     description:
       'Long-lasting lithium battery designed for efficient solar energy storage and dependable backup power.',
     brand: 'To Be Confirmed',
@@ -66,7 +66,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 'placeholder-inverter-3-5kva',
     slug: 'hybrid-inverter-3-5kva',
-    name: '[Confirm Brand] Hybrid Inverter 3.5kVA',
+    name: 'Hybrid Inverter 3.5kVA',
     description:
       'Compact hybrid inverter ideal for powering essential home appliances while maximizing solar energy usage.',
     brand: 'Deye',

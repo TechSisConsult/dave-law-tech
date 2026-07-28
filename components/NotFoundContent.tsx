@@ -13,7 +13,7 @@ const whatsappMessage = encodeURIComponent(
   'Hello Davelaw Technologies, I was browsing your website and would like to speak with your team about your solar solutions.',
 );
 
-export default function NotFound() {
+export default function NotFoundContent() {
   return (
     <section className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-dl-dark">
       {/* Background */}

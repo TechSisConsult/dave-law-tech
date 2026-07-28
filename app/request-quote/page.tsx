@@ -12,7 +12,6 @@ import {
 } from 'react-icons/hi';
 import { useQuoteList } from '@/context/QuoteListContext';
 
-// Davelaw's confirmed WhatsApp business number.
 const WHATSAPP_NUMBER = '2348033699776';
 
 const STEPS = ['Review Products', 'Your Details', 'Send Request'];
@@ -50,9 +49,6 @@ export default function RequestQuotePage() {
   }, [items, name, phone, location, notes]);
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageBody)}`;
-  // Email uses a mailto: link for now — no backend dependency required.
-  // Upgrade path: replace with a Resend-powered API route (as on the main
-  // TechSis site) once Davelaw confirms a business email + Resend API key.
   const emailHref = `mailto:hello@davelawtechnologies.com?subject=${encodeURIComponent(
     'Quote Request — Davelaw Technologies',
   )}&body=${encodeURIComponent(messageBody)}`;

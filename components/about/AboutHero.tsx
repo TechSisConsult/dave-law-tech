@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 
 export default function AboutHero() {
   return (
-    <section className="relative isolate h-[55vh] min-h-[320px] overflow-hidden pt-20">
+    <section className="relative isolate h-[55vh] min-h-[380px] overflow-hidden pt-20 sm:pt-28">
       <motion.div
         initial={{ scale: 1.08 }}
         animate={{ scale: 1 }}
@@ -39,13 +39,13 @@ export default function AboutHero() {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <h1 className="mt-6 font-display text-2xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+            <h1 className="mt-6 font-display text-xl sm:text-2xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
               Powering Homes,Businesses &
               <br />
               Communities.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 lg:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/75 text-[12px] sm:text-sm lg:text-[16px]">
               Trusted renewable energy solutions built around quality, integrity
               and innovation; helping homes and businesses enjoy reliable power
               with genuine products, professional installation and long-term
@@ -56,7 +56,7 @@ export default function AboutHero() {
       </div>
 
       {/* Bottom Fade */}
-      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white/80 dark:from-dl-dark to-transparent" />
+      <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white/60 dark:from-dl-dark to-transparent" />
     </section>
   );
 }
