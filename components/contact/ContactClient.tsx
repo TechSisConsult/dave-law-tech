@@ -28,7 +28,7 @@ export default function ContactPage() {
   );
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageBody)}`;
-  const emailHref = `mailto:hello@davelawtechnologies.com?subject=${encodeURIComponent(
+  const emailHref = `mailto:info@davelawtechnologies.com?subject=${encodeURIComponent(
     'General Inquiry — Davelaw Technologies',
   )}&body=${encodeURIComponent(messageBody)}`;
 
@@ -99,7 +99,7 @@ export default function ContactPage() {
                   Email
                 </p>
                 <p className="text-sm text-dl-ink/60 dark:text-white/60 mt-1">
-                  hello@davelawtechnologies.com
+                  info@davelawtechnologies.com
                 </p>
               </div>
             </div>

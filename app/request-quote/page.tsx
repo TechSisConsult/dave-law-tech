@@ -49,7 +49,7 @@ export default function RequestQuotePage() {
   }, [items, name, phone, location, notes]);
 
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageBody)}`;
-  const emailHref = `mailto:hello@davelawtechnologies.com?subject=${encodeURIComponent(
+  const emailHref = `mailto:info@davelawtechnologies.com?subject=${encodeURIComponent(
     'Quote Request — Davelaw Technologies',
   )}&body=${encodeURIComponent(messageBody)}`;
 

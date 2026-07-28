@@ -139,7 +139,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <HiOutlineMail className="text-dl-green-light" />{' '}
-              hello@davelawtechnologies.com
+              info@davelawtechnologies.com
             </li>
           </ul>
         </div>
@@ -148,7 +148,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-8 py-4 flex flex-col sm:flex-row items-center gap-3">
           <a
-            href="mailto:hello@davelawtechnologies.com"
+            href="mailto:info@davelawtechnologies.com"
             className="flex-1 w-full flex items-center justify-center gap-2 text-xs text-white/60 hover:text-white border border-white/10 rounded-full px-4 py-2.5 transition-colors"
           >
             <HiOutlineMail /> Drop Us a Line
