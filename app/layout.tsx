@@ -37,16 +37,71 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Davelaw Technologies | Solar & Power Solutions in Ilorin, Nigeria',
+  metadataBase: new URL('https://www.davelawtechnologies.com'),
+
+  title: {
+    default:
+      'Davelaw Technologies | Solar Energy, Inverters & CCTV Solutions in Nigeria',
+    template: '%s | Davelaw Technologies',
+  },
+
   description:
-    'Davelaw Technologies designs, supplies and installs solar power systems, inverters and batteries for homes and businesses across Ilorin, Kwara State and Nigeria. Get a free solar estimate today.',
+    'Davelaw Technologies supplies and installs premium solar power systems, hybrid inverters, lithium batteries, CCTV systems and electrical solutions for homes and businesses across Nigeria.',
+
   keywords: [
-    'solar company Ilorin',
-    'solar installation Kwara State',
-    'inverter and battery Nigeria',
-    'Davelaw Technologies',
-    'solar estimate Nigeria',
+    'Solar Company Nigeria',
+    'Solar Installation Ilorin',
+    'Solar Panels',
+    'Hybrid Inverter',
+    'Lithium Battery',
+    'Deye Dealer Nigeria',
+    'Solar Energy',
+    'Solar Installer',
+    'CCTV Installation',
+    'Renewable Energy',
   ],
+
+  authors: [{ name: 'Davelaw Technologies' }],
+
+  creator: 'Davelaw Technologies',
+
+  publisher: 'Davelaw Technologies',
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    type: 'website',
+    locale: 'en_NG',
+    url: 'https://www.davelawtechnologies.com',
+    siteName: 'Davelaw Technologies',
+    title: 'Davelaw Technologies | Reliable Solar Energy Solutions in Nigeria',
+    description:
+      'Trusted solar installers providing solar panels, inverters, lithium batteries, CCTV systems and electrical installations.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Davelaw Technologies',
+      },
+    ],
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Davelaw Technologies | Reliable Solar Energy Solutions',
+    description:
+      'Professional solar installation and renewable energy solutions.',
+    images: ['/og-image.png'],
+  },
+
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/logo.png',
+  },
 };
 
 export default function RootLayout({

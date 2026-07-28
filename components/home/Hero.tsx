@@ -54,30 +54,29 @@ export default function Hero() {
         fill
         priority
         alt="Davelaw Solar Installation"
-        className="object-cover"
+        className="object-cover object-center"
       />
 
-      <div className="relative mx-auto flex min-h-[680px] max-w-7xl flex-col items-center px-6 pt-36 pb-10 text-center lg:px-8">
+      <div className="relative mx-auto flex min-h-[680px] max-w-7xl flex-col items-center px-6 pt-28 sm:pt-36 pb-10 text-center lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="relative z-10 max-w-4xl"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-dl-green/20 bg-dl-green/10 px-5 py-2 text-sm font-medium text-dl-green backdrop-blur">
+          <div className="inline-flex items-center gap-2 rounded-full border border-dl-green/20 bg-dl-green/10 px-5 py-1 sm:py-2 text-xs sm:text-sm font-medium text-dl-green backdrop-blur">
             <HiShieldCheck />
             Trusted Solar Partner
           </div>
 
-          {/* Translucent panel — just behind the headline + paragraph, for legibility over the photo */}
           <div className="mt-6 rounded-3xl bg-white/10 backdrop-blur-md dark:bg-transparent p-1 sm:p-2">
-            <h1 className="font-stencil text-5xl leading-[1.05] text-dl-dark dark:text-white lg:text-7xl">
+            <h1 className="font-stencil text-3xl sm:text-4xl leading-[1.05] text-dl-dark dark:text-white lg:text-6xl">
               Reliable Power
               <span className="block text-dl-orange">for Homes,</span>
               <span className="block">Businesses & Industries</span>
             </h1>
 
-            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-white dark:text-white/70">
+            <p className="mx-auto mt-8 max-w-2xl text-sm sm:text-lg leading-8 text-white dark:text-white/70">
               Davelaw Technologies supplies and installs premium solar systems,
               inverters, lithium batteries, CCTV solutions and electrical
               installations for homes and businesses across Nigeria.
@@ -89,7 +88,7 @@ export default function Hero() {
               href="https://wa.me/2348033699776?text=Hello%20Davelaw%20Technologies,%20I%20would%20like%20to%20get%20a%20custom%20quote%20for%20a%20solar%20solution.%20Please%20let%20me%20know%20the%20information%20you%20need%20to%20prepare%20a%20quotation."
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-dl-orange/80 px-7 py-4 font-semibold text-white transition hover:-translate-y-1"
+              className="group inline-flex items-center gap-2 rounded-full bg-dl-orange/80 px-7 py-4 font-semibold text-white transition hover:-translate-y-1 text-sm sm:text-lg"
             >
               Get a Custom Quote
               <HiArrowRight className="transition group-hover:translate-x-1" />
@@ -97,7 +96,7 @@ export default function Hero() {
 
             <Link
               href="/products"
-              className="rounded-full border border-dl-dark/10 bg-white px-7 py-4 font-semibold hover:bg-dl-dark/5 dark:border-white/10 dark:bg-transparent dark:hover:bg-white/5 dark:text-white"
+              className="rounded-full border border-dl-dark/10 bg-white px-7 py-4 font-semibold hover:bg-dl-dark/5 dark:border-white/10 dark:bg-transparent dark:hover:bg-white/5 dark:text-white text-sm sm:text-lg"
             >
               Explore Products
             </Link>
