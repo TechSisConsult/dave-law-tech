@@ -80,14 +80,17 @@ export default function Header() {
                 : 'bg-white/55 dark:bg-dl-dark/45 border-white/30 shadow-xl',
             )}
           >
-            <Link href="/" className="flex items-center gap-3 shrink-0">
+            <Link
+              href="/"
+              className="flex items-center justify-center gap-3 shrink-0"
+            >
               <Image
                 src="/favicon.png"
                 priority
                 alt="Davelaw Solar Installation"
-                className="object-cover w-8 h-8"
-                width={20}
-                height={20}
+                className="object-contain w-12 h-12"
+                width={45}
+                height={45}
               />
 
               <div className="flex flex-col leading-none">
@@ -99,6 +102,9 @@ export default function Header() {
 
                 <span className="uppercase tracking-[0.35em] text-[10px] text-dl-ink/55 dark:text-white/60">
                   Technologies
+                </span>
+                <span className="text-dl-orange text-[12px] font-bold tracking-[0.35em]">
+                  LTD
                 </span>
               </div>
             </Link>

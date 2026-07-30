@@ -10,6 +10,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ThemeProvider from '@/context/ThemeProvider';
 import { QuoteListProvider } from '@/context/QuoteListContext';
+import Script from 'next/script';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -40,25 +41,31 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.davelawtechnologies.com'),
 
   title: {
-    default:
-      'Davelaw Technologies | Solar Energy, Inverters & CCTV Solutions in Nigeria',
+    default: 'Davelaw Technologies | Solar Energy, Inverters & CCTV Solutions',
     template: '%s | Davelaw Technologies',
   },
 
   description:
-    'Davelaw Technologies supplies and installs premium solar power systems, hybrid inverters, lithium batteries, CCTV systems and electrical solutions for homes and businesses across Nigeria.',
+    'Davelaw Technologies supplies and installs premium solar power systems, hybrid inverters, lithium batteries, CCTV security systems and electrical solutions for homes, businesses and industries across Nigeria.',
+
+  applicationName: 'Davelaw Technologies',
 
   keywords: [
     'Solar Company Nigeria',
+    'Solar Installation Nigeria',
     'Solar Installation Ilorin',
     'Solar Panels',
     'Hybrid Inverter',
     'Lithium Battery',
+    'Tubular Battery',
     'Deye Dealer Nigeria',
     'Solar Energy',
-    'Solar Installer',
-    'CCTV Installation',
     'Renewable Energy',
+    'CCTV Installation',
+    'Electrical Installation',
+    'Solar Power Systems',
+    'Commercial Solar',
+    'Residential Solar',
   ],
 
   authors: [{ name: 'Davelaw Technologies' }],
@@ -67,40 +74,93 @@ export const metadata: Metadata = {
 
   publisher: 'Davelaw Technologies',
 
+  category: 'Renewable Energy',
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+
+  manifest: '/manifest.webmanifest',
+
+  appleWebApp: {
+    capable: true,
+    title: 'Davelaw Technologies',
+    statusBarStyle: 'black-translucent',
   },
 
   openGraph: {
-    type: 'website',
-    locale: 'en_NG',
-    url: 'https://www.davelawtechnologies.com',
-    siteName: 'Davelaw Technologies',
-    title: 'Davelaw Technologies | Reliable Solar Energy Solutions in Nigeria',
+    title: 'Davelaw Technologies | Reliable Solar Energy Solutions',
     description:
-      'Trusted solar installers providing solar panels, inverters, lithium batteries, CCTV systems and electrical installations.',
+      'Professional solar installation, hybrid inverter systems, lithium batteries, CCTV solutions and renewable energy services for homes and businesses across Nigeria.',
+
+    url: 'https://www.davelawtechnologies.com',
+
+    siteName: 'Davelaw Technologies',
+
+    locale: 'en_NG',
+
+    type: 'website',
+
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Davelaw Technologies',
+        alt: 'Davelaw Technologies - Reliable Solar Energy Solutions',
       },
     ],
   },
 
   twitter: {
     card: 'summary_large_image',
+
     title: 'Davelaw Technologies | Reliable Solar Energy Solutions',
+
     description:
-      'Professional solar installation and renewable energy solutions.',
+      'Trusted renewable energy company specializing in solar systems, hybrid inverters, batteries, CCTV installations and electrical solutions.',
+
     images: ['/og-image.png'],
   },
 
   icons: {
-    icon: '/favicon.ico',
-    apple: '/logo.png',
+    icon: [
+      {
+        url: '/favicon.png',
+        sizes: '48x48',
+        type: 'image/png',
+      },
+      {
+        url: '/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        url: '/andriod-chrome-192x192.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+      {
+        url: '/android-chrome-512x512.png',
+        sizes: '512x512',
+        type: 'image/png',
+      },
+    ],
+
+    apple: [
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
   },
 };
 
@@ -121,6 +181,18 @@ export default function RootLayout({
             <Footer />
           </QuoteListProvider>
         </ThemeProvider>
+        <Script id="tawk-to" strategy="afterInteractive">
+          {`var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6a693a0e536c401d48943cac/1julglio5';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+          `}
+        </Script>
       </body>
     </html>
   );

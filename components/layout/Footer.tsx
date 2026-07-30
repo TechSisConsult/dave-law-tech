@@ -17,7 +17,7 @@ export default function Footer() {
               src="/favicon.png"
               priority
               alt="Davelaw Solar Installation"
-              className="object-cover w-8 h-8"
+              className="object-cover w-12 h-12"
               width={20}
               height={20}
             />
