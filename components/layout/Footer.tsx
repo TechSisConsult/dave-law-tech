@@ -14,7 +14,7 @@ export default function Footer() {
         <div>
           <div className="font-display font-semibold text-lg mb-3">
             <Image
-              src="/favicon.png"
+              src="/logo.png"
               priority
               alt="Davelaw Solar Installation"
               className="object-cover w-12 h-12"

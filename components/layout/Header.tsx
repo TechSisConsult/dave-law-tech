@@ -85,7 +85,7 @@ export default function Header() {
               className="flex items-center justify-center gap-3 shrink-0"
             >
               <Image
-                src="/favicon.png"
+                src="/logo.png"
                 priority
                 alt="Davelaw Solar Installation"
                 className="object-contain w-12 h-12"

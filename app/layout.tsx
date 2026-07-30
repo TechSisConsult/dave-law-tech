@@ -111,7 +111,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: '/og-image.png',
+        url: '/davelaw-logo.png',
         width: 1200,
         height: 630,
         alt: 'Davelaw Technologies - Reliable Solar Energy Solutions',
@@ -127,7 +127,7 @@ export const metadata: Metadata = {
     description:
       'Trusted renewable energy company specializing in solar systems, hybrid inverters, batteries, CCTV installations and electrical solutions.',
 
-    images: ['/og-image.png'],
+    images: ['/davelaw-logo.png'],
   },
 
   icons: {

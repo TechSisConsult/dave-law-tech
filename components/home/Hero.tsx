@@ -69,7 +69,7 @@ export default function Hero() {
             Trusted Solar Partner
           </div>
 
-          <div className="mt-6 rounded-3xl bg-white/40 dark:bg-dl-green/40 backdrop-blur-md p-1 sm:p-2">
+          <div className="mt-6 rounded-3xl bg-white/40 dark:bg-dl-green/20 backdrop-blur-md p-1 sm:p-2">
             <h1 className="font-stencil text-3xl sm:text-4xl leading-[1.05] text-dl-dark dark:text-white lg:text-6xl">
               Reliable Power
               <span className="block text-dl-orange">for Homes,</span>
